@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd"
+  template="menu.xhtml"
+  xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="htmlHead">
+    <meta name="description" content="Introducao" />
+    <title>Introducao</title>
+  </ui:define>
+  <ui:define name="navigation">
+    <h:outputText styleClass="selected" value="Home" />
+    <h:commandLink action="products" value="Products" />
+    <h:commandLink action="contact-us" value="Contact Us" />
+  </ui:define>
+
+  <ui:define name="main"><p></p>
+
+<h:messages globalOnly="true" />
+	<h:body><div class="">
+		   <h:form id="form">
+		       <h:panelGrid id="grid" columns="1">
+		       	<h:panelGroup>
+		       			<h:outputLabel id="userLabel" for="user" value="User"/>
+		       			<p:inputText id="user" value="#{riscoBean.user}"></p:inputText>
+			       		<p:commandButton value="Carregar Área de Projeto" update="projectAreas" action="#{riscoBean.listarAreasProjeto}" ></p:commandButton>
+	       		</h:panelGroup>
+		       
+		            <h:panelGroup>
+		       			<h:outputLabel id="passwordLabel" for="password" value="Password"/>
+		       			<h:inputSecret id="password" name="password" value="#{riscoBean.password}"/>
+		       		</h:panelGroup>
+	       		
+		       		<h:panelGroup >
+		       			<h:outputLabel id="projectAreasLabel" for="projectAreas" value="Área de projeto"/>
+		       			<p:selectOneMenu id="projectAreas" name="projectAreas" binding="#{riscoBean.htmlSelectProjects}" value="#{riscoBean.selectedProjectArea}">
+		       				<p:ajax listener="#{riscoBean.listarAtividades}" update="activities" />
+		       			</p:selectOneMenu>
+		       		</h:panelGroup>
+		       		
+		       		<h:panelGroup >
+		       			<h:outputLabel id="activitiesLabel" for="activities" value="Planejado para"/>
+		       			<p:selectOneMenu id="activities" name="activities" binding="#{riscoBean.htmlSelectActivities}" value="#{riscoBean.selectedActivity}"/>
+		       		</h:panelGroup>
+		       		
+                    <h:panelGroup>
+		       			<h:outputLabel id="titleLabel" for="title" value="Título"/>
+		       			<h:inputText id="title" name="title" value="#{riscoBean.title}"/>
+		       		</h:panelGroup>
+		       		
+		       		<h:panelGroup>
+		       			<h:outputLabel id="descriptionLabel" for="description" value="Descrição"/>		       			
+		       		</h:panelGroup>
+		       		
+		       		<h:panelGroup>
+		       			<h:inputTextarea id="description" name="description" value="#{riscoBean.description}" cols="70" rows="10"/>
+		       		</h:panelGroup>
+		       		
+		       		<h:panelGroup>
+		       			<h:commandButton type="submit" value="Enviar" action="#{riscoBean.incluirRisco}"/>
+		       		</h:panelGroup>
+		
+		        </h:panelGrid>
+		        
+		   </h:form>
+	</div>
+	</h:body>
+
+
+  </ui:define>
+
+
+</ui:composition>
+

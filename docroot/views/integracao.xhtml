@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd"
+  template="menu.xhtml" 
+  xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="htmlHead">
+    <meta name="description" content="Integração" />
+    <title>Integração</title>
+  </ui:define>
+
+  <ui:define name="navigation">
+    <h:outputText styleClass="selected" value="Home" />
+    <h:commandLink action="products" value="Products" />
+    <h:commandLink action="contact-us" value="Contact Us" />
+  </ui:define>
+
+  <ui:define name="main">
+    <p:outputLabel value="Integracão" />
+  <p></p>
+   <h:form>
+   <p:growl id="msgs" showDetail="true" />
+ 
+  
+    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+   <p:dataList value="#{clienteALMView.perguntas}" var="perg" type="definition">
+   
+    <p:panel id="pergunta#{perg.id}" header="Pergunta #{perg.id}" toggleable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel#{perg.id}" style="margin-bottom:20px" >
+        <h:outputText value="#{perg.id}, #{perg.descricao}" />
+        <p:selectBooleanCheckbox value="#{perg.result}" />
+        <p:effect type="pulsate" event="click" delay="5" speed="3"/>
+    </p:panel>
+   </p:dataList>
+     </h:panelGrid>
+    <p:commandButton value="Submit" icon="ui-icon-check" action="#{clienteALMView.salvarIntegracao()}"/>
+</h:form>
+  </ui:define>
+
+
+</ui:composition>

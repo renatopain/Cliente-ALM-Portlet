@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#views#view.xhtml" PATH="/views/view.xhtml"
+  SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#views#view.xhtml:0" NAME="item"
+   PATH="/views/view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#views#success.xhtml" NAME="output"
+    PATH="/views/success.xhtml" TARGET="rules:#views#success.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#success.xhtml"
+  PATH="/views/success.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#views#success.xhtml:0" NAME="item"
+   PATH="/views/success.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="form::#views#view.xhtml" NAME="output"
+    PATH="/views/view.xhtml" TARGET="rules:#views#view.xhtml"
+    TITLE="form" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#integracao.xhtml"
+  PATH="/views/integracao.xhtml" SHAPE="240,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#introducao.xhtml"
+  PATH="/views/introducao.xhtml" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#views#introducao.xhtml:0" NAME="item"
+   PATH="/views/introducao.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="integracao::#views#integracao.xhtml"
+    NAME="output" PATH="/views/integracao.xhtml"
+    TARGET="rules:#views#integracao.xhtml" TITLE="integracao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="monitoracao::#views#monitoracao.xhtml"
+    NAME="output1" PATH="/views/monitoracao.xhtml"
+    TARGET="rules:#views#monitoracao.xhtml" TITLE="monitoracao" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#monitoracao.xhtml"
+  PATH="/views/monitoracao.xhtml" SHAPE="256,289,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

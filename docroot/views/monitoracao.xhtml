@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd"
+  template="menu.xhtml"
+  xmlns:p="http://java.sun.com/jsf/html">
+
+
+<ui:define name="htmlHead">
+    <meta name="description" content="Our Company Home Page" />
+    <title>Our Company - Home</title>
+  </ui:define>
+
+  <ui:define name="navigation">
+    <h:outputText styleClass="selected" value="Home" />
+    <h:commandLink action="products" value="Products" />
+    <h:commandLink action="contact-us" value="Contact Us" />
+  </ui:define>
+
+  <ui:define name="main">
+    <h:outputText value="Monitoração." />
+  </ui:define>
+
+
+</ui:composition>

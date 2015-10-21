@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:aui="http://alloy.liferay.com/tld/aui">
+    <ui:debug />
+	<h:head>
+	<ui:insert name="htmlHead" />
+	</h:head>
+	<h:body>
+<h:form>
+<p:menubar style="margin-top:20px">
+    <p:submenu label="Arquitetura" icon="ui-icon-check">
+                <p:menuitem value="Integração" action="#{clienteALMView.integracao()}" ajax="false"  />
+                <p:menuitem value="Controle transacional" action="#{clienteALMView.monitoracao()}"  ajax="false" />
+                <p:menuitem value="Regras de Negócio" action="#{clienteALMView.monitoracao()}"  ajax="false" />
+                <p:menuitem value="Monitoração" action="#{clienteALMView.monitoracao()}"  ajax="false" />
+    </p:submenu>
+    <p:submenu label="Dados" icon="ui-icon-check">
+                <p:menuitem value="Arquivos" action="#{clienteALMView.integracao()}" ajax="false"  />
+                <p:menuitem value="Banco de Dados" action="#{clienteALMView.monitoracao()}"  ajax="false" />
+    </p:submenu>
+
+ <p:submenu label="Segurança" icon="ui-icon-check">
+                <p:menuitem value="Controle de Acesso" action="#{clienteALMView.integracao()}" ajax="false"  />
+                <p:menuitem value="Criptografia" action="#{clienteALMView.monitoracao()}"  ajax="false" />
+    </p:submenu>
+    
+   <p:menuitem value="Incluir Risco" outcome="view.xhtml" icon="ui-icon-check"/>
+
+</p:menubar>
+ 
+ <ui:insert name="main" />
+ 
+ </h:form>
+	</h:body>
+</f:view>
